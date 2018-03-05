@@ -1,0 +1,276 @@
+@import 'config.scss';
+
+@import '~@angular/material/theming';
+@include mat-core();
+$config-font: mat-typography-config();
+
+$theme-app-primary: mat-palette($app-theme-palette);
+$theme-app-accent:  mat-palette($mat-deep-orange, A200, A100, A400);
+$theme-app-theme:   mat-light-theme($theme-app-primary, $theme-app-accent);
+
+@include angular-material-theme($theme-app-theme);
+
+//@import '~@angular/material/prebuilt-themes/purple-green.css';
+
+//-------------- OVERRIDES ---------------------------
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: mat-font-family($config-font);    
+}
+
+mat-icon {
+    color: white;        
+}
+
+.login-menu {
+    margin-top: 70px;
+}
+
+.mat-dialog-container {
+    padding: 0px !important;
+}
+
+.ui-inputtext {
+    border: 1px solid pink;
+}
+
+.panel-default {
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 0px;
+
+    > .panel-heading {
+        background: #e8e8e8;
+        border-bottom: 1px solid #d3d3d3;
+
+        > .panel-title {
+            font-size: 15px;
+            font-weight: normal;
+        }
+    }
+
+    > .panel-body {
+        height: 100%;
+    }
+}
+
+.app-form-control {
+    height: 30px !important;
+    //width: auto !important;
+    font-family: $main-font !important;
+    -webkit-appearance: none !important;
+    padding: 5px 8px !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    background-color: #fff !important;
+    border: 1px solid #d9d9d9 !important;
+    border-top-color: silver !important;
+    border-radius: 2px !important;
+    box-shadow: none !important;
+    transition: none !important;
+}
+
+input.form-control {
+    @extend .app-form-control;
+}
+
+
+
+
+//-------------- UTILS ---------------------------
+
+$margin-sml: 6px;
+$margin-med: 10px;
+$margin-big: 16px;
+
+$font-sml: 12px;
+$font-def: 14px;
+$font-med: 20px;
+$font-big: 30px;
+
+.fill-space {
+    flex: 1 1 auto;
+}
+
+.margin-med {
+    margin: $margin-med !important;
+}
+.margin-big {
+    margin: $margin-big !important;
+}
+.margin-med-rv {
+    margin: $margin-med $margin-med $margin-med 0 !important;
+}
+.margin-med-lv {
+    margin: $margin-med 0 $margin-med $margin-med !important;
+}
+.margin-med-l {
+    margin-left: $margin-med;
+}
+.margin-med-r {
+    margin-right: $margin-med;
+}
+
+.font-med {
+    font-size: $font-med !important;
+}
+.font-sml {
+    font-size: $font-sml !important;
+}
+.font-def {
+    font-size: $font-def !important;
+}
+
+.space-med {
+    height: 10px;
+    width: 10px;
+}
+.space-sml {
+    height: 6px;
+    width: 6px;
+}
+
+.flex-h {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+.flex-v {
+    display: flex;
+    width: 100%;
+    flex-direction: column;    
+}
+
+.flex-align-center {
+    align-items: center;
+}
+.flex-justify-center {
+    justify-content: center;
+}
+.flex-justify-sb {
+    justify-content: space-between;
+}
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.center-row-h {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+}
+.center-row-v {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.align-right {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+}
+
+.bg-gray {
+    background-color: #EEEEEE !important;
+}
+.hover-dark:hover {
+    background-color: rgba(#111111, 0.2);
+    cursor: pointer;
+}
+.hover-clear:hover {
+    background-color: rgba(#AAAAAA, 0.2);
+    cursor: pointer;
+}
+.full-height {
+    height: 100%;
+}
+.full-width {
+    width: 100%;
+}
+.button-icon-gray {
+    background: #EEEEEE !important;
+}
+.point-green {
+    height: 10px;
+    width: 10px;
+    border-radius: 16px;
+    background-color: #21c945;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+
+.mat-micro-fab {
+    min-width: 0;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    flex-shrink: 0;
+
+    .mat-button-wrapper {
+        height: 24px !important;
+        //width: 24px !important;
+        vertical-align: top !important;
+        padding: 3px !important;
+        
+        mat-icon {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+}
+
+.icon-white {
+    color: white;
+}
+.icon-black {
+    color: black;
+}
+.icon-small {
+    height: 16px;
+    width: 16px;
+    font-size: 16px;
+    color: #5c697d;
+}
+
+.hide {
+    display: none;
+}
+.show {
+    display: inherit;
+}
+
+.transparent {
+    background-color: rgba(#000000, 0)
+}
+
+.filter-box {
+
+    background-color: #eaeaea;
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+
+    .filter-item {
+
+    }
+}
+
+select {
+    min-width: 160px;
+}
+
+.btn {
+    max-height: 30px;
+}
+
+select.form-control {
+    color: #a9a7a7 !important;
+    width: auto !important;
+    //background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ffffff;
+}

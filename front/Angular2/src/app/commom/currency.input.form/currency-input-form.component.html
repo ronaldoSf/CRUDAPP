@@ -1,0 +1,20 @@
+
+<input 
+type="text" 
+class="form-control"
+[formControl]="formControl"
+
+currencyMask 
+[(ngModel)]="currentValue"
+(ngModelChange)="currentValueChanged($event)" 
+[options]="{ prefix: '', thousands: '.', decimal: ',' }"
+
+#myInput
+(focus)="setSelectionEnd()"
+/>
+
+
+<!-- appMoneyMask
+[(ngModel)]="currentValueStr"
+[(moneyModel)]="currentValue"
+[moneyMaskOptions]="{ prefix: '', thousands: '.', decimal: ',' }" -->
